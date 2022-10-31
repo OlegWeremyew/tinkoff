@@ -35,7 +35,7 @@ export const AuthProvider: FC<IAuthProvider> = ({ children }) => {
         displayName: "No name"
       });
     } catch (error: any) {
-      Alert.alert("Error registration: ", error);
+      Alert.alert("Error registration: ", error.message);
     } finally {
       setIsLoading(false);
     }
@@ -46,7 +46,7 @@ export const AuthProvider: FC<IAuthProvider> = ({ children }) => {
     try {
       await login(email, password);
     } catch (error: any) {
-      Alert.alert("Error login: ", error);
+      Alert.alert("Error login: ", error.message);
     } finally {
       setIsLoading(false);
     }
@@ -57,7 +57,7 @@ export const AuthProvider: FC<IAuthProvider> = ({ children }) => {
     try {
       await logout();
     } catch (error: any) {
-      Alert.alert("Error logout: ", error);
+      Alert.alert("Error logout: ", error.message);
     } finally {
       setIsLoading(false);
     }

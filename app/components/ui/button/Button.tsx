@@ -8,7 +8,7 @@ interface IButton {
   colors?: [string, string];
 }
 
-export const Button: FC<IButton> = ({ onPress, title, colors = ["yellow", "#FBBF24"] }) => {
+export const Button: FC<IButton> = ({ onPress, title, colors = ["orange", "#FBBF24"] }) => {
 
   return (
     <TouchableHighlight

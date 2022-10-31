@@ -1,3 +1,7 @@
+export * from "./avatar"
 export * from "./button"
 export * from "./field"
+export * from "./header"
+export * from "./heading"
 export * from "./loader"
+export * from "./padding"

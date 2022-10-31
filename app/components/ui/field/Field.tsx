@@ -13,7 +13,6 @@ export const Field: FC<IField> = ({ onChange, value, placeholder, isSecure = fal
 
   return (
     <TextInput
-      showSoftInputOnFocus={false}
       placeholder={placeholder}
       onChangeText={onChange}
       value={value}

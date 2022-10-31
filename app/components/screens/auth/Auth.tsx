@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { useAuth } from "../../../hooks";
 import { Loader, Button, Field } from "../../ui";
-import {styles} from "./styles"
+import { styles } from "./styles";
 
 interface IData {
   email: string;
@@ -11,13 +11,18 @@ interface IData {
 
 export const Auth: FC = () => {
 
-  const { isLoading } = useAuth();
+  const { isLoading, login, register } = useAuth();
 
   const [iseReg, setIsReg] = useState(false);
   const [data, setData] = useState<IData>({} as IData);
 
-  const authHandler = () => {
+  const authHandler = async () => {
+    const { email, password } = data;
 
+    if(iseReg) await register(email, password)
+    else await login(email, password)
+
+    setData({} as IData)
   };
 
   return (

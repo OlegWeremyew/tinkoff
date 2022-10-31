@@ -4,13 +4,14 @@ export const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 5,
-    borderRadius: 5,
-    marginTop: 5,
+    paddingVertical: 12,
+    borderRadius: 20,
+    marginTop: 15,
   },
   buttonText: {
     textAlign: "center",
-    color: 'gray',
-    fontSize: 16,
+    color: '#333333',
+    fontSize: 18,
+    fontWeight: "bold",
   },
 });
