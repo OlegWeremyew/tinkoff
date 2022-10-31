@@ -1,10 +1,32 @@
 import React, { FC } from "react";
-import { View } from "react-native";
+import { createNativeStackNavigator } from "react-native-screens/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { useAuth } from "../hooks";
+import { Auth, Home, Payments, Services, Support, More, Profile } from "../components";
+
+
+const {Navigator, Screen} = createNativeStackNavigator()
 
 export const Navigation: FC = () => {
-  return (
-    <View>
 
-    </View>
+  const {user} = useAuth()
+
+  return (
+    <NavigationContainer>
+      <Navigator screenOptions={{headerShown: false}}>
+        {user ? (
+          <>
+            <Screen name='Home' component={Home}/>
+            <Screen name='Profile' component={Profile}/>
+            <Screen name='Payments' component={Payments}/>
+            <Screen name='Services' component={Services}/>
+            <Screen name='Support' component={Support}/>
+            <Screen name='More' component={More}/>
+          </>
+        ) : (
+          <Screen name='Auth' component={Auth}/>
+        )}
+      </Navigator>
+    </NavigationContainer>
   );
 };
